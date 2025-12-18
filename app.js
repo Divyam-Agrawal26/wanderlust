@@ -107,6 +107,9 @@ app.use((req,res,next)=>{
     res.locals.currUser = req.user;
     next();
 })
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 
 //index route
 app.use("/listings",listingRouter);
